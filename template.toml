@@ -86,3 +86,9 @@ prompt = "Deep learning framework"
 choices =  [
     "PyTorch",
 ]
+
+[[variables]]
+name = "pip_hf_transformers"
+default = false
+prompt = "Use HuggingFace transformers library"
+only_if = { name = "jupyter", value = true }

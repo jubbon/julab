@@ -3,3 +3,6 @@ torch
 torchvision
 torchaudio
 {%- endif %}
+{% if pip_hf_transformers -%}
+transformers
+{%- endif %}
