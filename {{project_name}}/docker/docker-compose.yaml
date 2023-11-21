@@ -1,0 +1,19 @@
+version: "2.4"
+services:
+  {% if jupyter -%}
+  jupyter:
+    build:
+      context: jupyter
+    image: {{ project_name }}-jupyter:latest
+    container_name: {{ project_name }}-jupyter
+    ports:
+      - {{ jupyter_port }}:8888
+    volumes:
+      - ../source:/opt/app/source
+    command: start.sh jupyter lab --LabApp.token=''
+    environment:
+      - CHOWN_HOME=yes
+      - NB_USER=${NB_USER}
+      - NB_UID=${NB_UID}
+      - NB_GID=${NB_GID}
+  {%- endif %}
