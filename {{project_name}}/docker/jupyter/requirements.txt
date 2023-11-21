@@ -1,1 +1,5 @@
-
+{% if dl_framework == "PyTorch" -%}
+torch
+torchvision
+torchaudio
+{%- endif %}
